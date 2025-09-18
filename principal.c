@@ -6,7 +6,7 @@
 #define MAX_COLUNAS 100
 
 char mapa[MAX_LINHAS][MAX_COLUNAS];
-int n; // Número de linhas (andares)
+int n; // Número de linhas
 int m; // Número de colunas
 
 //Função de backtracking
@@ -48,7 +48,6 @@ int encontraCaminho(int linha, int coluna) {
     //
     
 
-    // 7. Retornar Falha: Avisar que este caminho não deu certo.
     return 0;
 }
 
@@ -89,4 +88,5 @@ int main() {
 
     return 0;
 }
+
 
