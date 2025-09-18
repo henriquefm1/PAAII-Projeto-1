@@ -76,15 +76,9 @@ int main() {
     //Descobre o número de colunas medindo o tamanho da primeira linha do mapa
     m = strlen(mapa[0]);
 
-    //Chamada Inicial da Recursão
-    if (encontraCaminho(inicial_linha, inicial_coluna) == 1) {
-        printf("Chave encontrada no Edifício João Calvino!\n");
-    } else {
-        printf("Não conseguimos encontrar a chave no Edifício João Calvino.\n");
-    }
-
     return 0;
 }
+
 
 
 
