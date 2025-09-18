@@ -45,9 +45,6 @@ int encontraCaminho(int linha, int coluna) {
         }
     }
 
-    //
-    
-
     return 0;
 }
 
@@ -88,5 +85,6 @@ int main() {
 
     return 0;
 }
+
 
 
