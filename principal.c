@@ -46,7 +46,7 @@ int encontraCaminho(int linha, int coluna) {
     }
 
     //Desmarca o "rastro" feito caso seja um beco sem saida
-    mapa[linha][coluna] = tipo_caminho:
+    mapa[linha][coluna] = tipo_caminho;
         
     return 0;
 }
@@ -79,8 +79,15 @@ int main() {
     //Descobre o número de colunas medindo o tamanho da primeira linha do mapa
     m = strlen(mapa[0]);
 
+    if (encontraCaminho(inicial_linha, inicial_coluna) == 1) {
+        printf("Chave encontrada no Edifício João Calvino!\n");
+    } else {
+        printf("Não conseguimos encontrar a chave no Edifício João Calvino.\n");
+    }
+
     return 0;
 }
+
 
 
 
