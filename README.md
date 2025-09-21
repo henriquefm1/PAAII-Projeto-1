@@ -3,11 +3,10 @@ Projeto 1 de Projeto e Análise de Algoritmos 2
 
 
 
-============================================================
+
 Universidade Presbiteriana Mackenzie
 Algoritmos e Programação II
 Projeto 1: A Missão no Edifício João Calvino
-============================================================
 
 ------------------------------------------------------------
 INFORMAÇÕES DO GRUPO
