@@ -6,19 +6,19 @@
 #define MAX_COLUNAS 100
 
 char mapa[MAX_LINHAS][MAX_COLUNAS];
-int n; // Número de linhas
-int m; // Número de colunas
+int n; //Número de linhas
+int m; //Número de colunas
 
 //Função de backtracking
-int encontraCaminho(int linha, int coluna) {
+int encontraCaminho(int linha, int coluna){
 
     //Casos base de falha
-    if (linha < 0 || linha >= n || coluna < 0 || coluna >= m || mapa[linha][coluna] == '.') {
+    if(linha < 0 || linha >= n || coluna < 0 || coluna >= m || mapa[linha][coluna] == '.'){
         return 0;
     }
 
-    //Caso base
-    if (mapa[linha][coluna] == '*') {
+    //Caso base correto
+    if(mapa[linha][coluna] == '*'){
         return 1;
     }
 
@@ -29,18 +29,20 @@ int encontraCaminho(int linha, int coluna) {
     mapa[linha][coluna] = '.';
 
     //Checa o tipo de caminho
-    if (tipo_caminho == 'H') {
-        if (encontraCaminho(linha, coluna - 1) == 1) { //Tenta esquerda
+    //A função chama uma cópia de si mesma e tenta o próximo caminho
+    if (tipo_caminho == 'H'){
+        if (encontraCaminho(linha, coluna - 1) == 1){ //Tenta esquerda
+            // "== 1" verifica se a tentativa resulta em sucesso
+            return 1; //Se a resposta for sim, a função retorna 1
+        }
+        if (encontraCaminho(linha, coluna + 1) == 1){ //Tenta direita
             return 1;
         }
-        if (encontraCaminho(linha, coluna + 1) == 1) { //Tenta direita
+    } else if (tipo_caminho == 'V'){
+        if (encontraCaminho(linha - 1, coluna) == 1){ //Tenta cima
             return 1;
         }
-    } else if (tipo_caminho == 'V') {
-        if (encontraCaminho(linha - 1, coluna) == 1) { //Tenta cima
-            return 1;
-        }
-        if (encontraCaminho(linha + 1, coluna) == 1) { //Tenta baixo
+        if (encontraCaminho(linha + 1, coluna) == 1){ //Tenta baixo
             return 1;
         }
     }
@@ -56,7 +58,7 @@ int main() {
     int inicial_linha, inicial_coluna;
 
     //Parte de leitura de dados do arquivo
-    FILE *arquivo = fopen("entrada.txt", "r");
+    FILE *arquivo = fopen("main.txt", "r");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo de entrada!\n");
         return 1; //Termina o programa com erro
@@ -78,7 +80,8 @@ int main() {
 
     //Descobre o número de colunas medindo o tamanho da primeira linha do mapa
     m = strlen(mapa[0]);
-
+    
+    //Chama a função na main para a resposta
     if (encontraCaminho(inicial_linha, inicial_coluna) == 1) {
         printf("Chave encontrada no Edifício João Calvino!\n");
     } else {
@@ -87,9 +90,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-
