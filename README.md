@@ -14,7 +14,7 @@ INFORMAÇÕES DO GRUPO
 ------------------------------------------------------------
 
 Nome Completo: Enrique Cipolla Martins
-RA:
+RA: 10427834
 Turma: 4P
 
 Nome Completo: Henrique Ferreira Marciano
@@ -23,7 +23,7 @@ Turma: 4P
 
 
 Nome Completo: Matheus Guion Firmino
-RA:
+RA: 10437693
 Turma: 4P
 
 
