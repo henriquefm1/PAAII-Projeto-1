@@ -22,7 +22,7 @@ int encontraCaminho(int linha, int coluna) {
         return 1;
     }
 
-    // 3. Salvar o estado do caminho
+    //Salvar o estado do caminho
     char tipo_caminho = mapa[linha][coluna];
 
     //Marca um "rastro" para que o programa não volte para o caminho usado
@@ -45,6 +45,9 @@ int encontraCaminho(int linha, int coluna) {
         }
     }
 
+    //Desmarca o "rastro" feito caso seja um beco sem saida
+    mapa[linha][coluna] = tipo_caminho:
+        
     return 0;
 }
 
@@ -78,6 +81,7 @@ int main() {
 
     return 0;
 }
+
 
 
 
